@@ -1,0 +1,179 @@
+@import url(https://fonts.googleapis.com/css?family=Lato:400,300);
+
+body {
+  font-family: "Lato", sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #24292d;
+  text-align: center;
+}
+
+header {
+  background: url(../images/mountain.jpg) center no-repeat;
+  background-size: cover;
+/*To make our header the height of our browser window, no matter which size it is, we use 100vh - or viewport height. We can also use vw - viewport width.*/
+  height: 100vh;
+}
+
+h1 {
+/*Position absolute allows us to position an element away from its normal position, use top, right, bottom & left.*/
+  position: absolute;
+/*To move our logo into the middle of the page, first set 50% top and 50% left. We then need to adjust the positioning, as images and elements are moved from their top left co-ordinates.*/
+  top: 50%;
+  left: 50%;
+/*To get our image into the middle, we need to move it half of its height upwards, and half of its width towards the left.*/
+  margin: -132px 0 0 -250px;
+}
+
+header a {
+  position: absolute;
+  bottom: 40px;
+}
+
+.intro {
+  background-color: #e0e3e6;
+  padding: 50px 0;
+}
+
+h2 {
+  font-size: 26px;
+  text-transform: uppercase;
+  font-weight: 300;
+  margin-bottom: 40px;
+}
+
+.feature {
+  padding: 60px;
+  max-width: 860px;
+  margin: auto;
+}
+
+.feature p {
+  margin-bottom: 20px;
+}
+
+.arrow {
+  display: block;
+  margin: 0 auto 20px auto;
+}
+
+#blue-lagoon {
+  background-image: url(../images/blue-lagoon.jpg);
+}
+
+#pool {
+  background-image: url(../images/pool.jpg);
+}
+
+#forest {
+  background-image: url(../images/forest.jpg);
+}
+
+#boat {
+  background-image: url(../images/boat.jpg);
+}
+
+#river {
+  background-image: url(../images/river.jpg);
+}
+
+.scroll-effect {
+/*set to 100% of browser height*/
+  height: 100vh;
+  background: no-repeat center;
+  background-size: cover;
+/*create window effect where mages look fixed in place and scroll over one another*/
+  background-attachment: fixed;
+/*to fix absolute position issue - reset the co-ordinates to the current section by adding position relative.*/
+  position: relative;
+}
+
+h3 {
+/*When using position absolute or fixed, remember we lose the width. To get our alignment working again - we need to add 100% width.*/
+  position: absolute;
+  bottom: 20px;
+  color: #fff;
+  width: 100%;
+  font-size: 42px;
+  text-transform: uppercase;
+  font-weight: 300;
+}
+
+.subscribe {
+  background-color: #f3f4f5;
+  padding: 50px 0;
+}
+
+footer {
+  padding: 50px 0;
+  text-transform: uppercase;
+  font-size: 12px;
+  font-weight: 300;
+}
+
+footer a {
+  text-decoration: none;
+  color: #24292d;
+  margin: 0 10px;
+}
+
+small {
+  color: #e0e3e6;
+}
+
+form {
+  width: 100%;
+}
+
+input {
+  width: 60%;
+  padding: 8px;
+  text-align: center;
+  outline: none;
+  border: 2px solid #24292d;
+/*Transitions allow us to transition between css properties. Here we want our border colour to gradually change from black to green. Transitions take three values, the property you want to change (ie border), the duration and the timing function (ie. ease-in or ease-out).*/
+/*If transitioning more than one property, we can use 'all' to transform all changes between states.*/
+  transition: all 0.3s ease-in-out;
+  margin: 10px 0;
+}
+
+input[type=submit] {
+  text-transform: uppercase;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+input:focus {
+  border-color: #16b898;
+}
+
+input[type=submit]:hover {
+    width: 70%;
+  border-color: #16b898;
+}
+
+@media screen and (max-width: 860px) {
+
+  h1 {
+/*Position: static; resets our element to sit where it orignially was found, within the flow of our html*/
+    position: static;
+/*As we have margins effecting our h1 still - it sits our of view. To reset this, we set margin to 0*/
+    margin: 0;
+/*We now add padding to push our h1 away from the edges of our browser on smaller screens*/
+    padding: 20px;
+  }
+
+/*If we use class names to style things up outside of our media query, in order to override those styles, we must use them again. This is due to selector specificity. The more specific we are - ie, using class names, or 'nav a', the more importance is assigned to the rules we apply. To override them, be as specific again.*/
+.intro, .subscribe, .feature {
+  padding: 20px;
+}
+
+input {
+  width: 80%;
+}
+
+input[type="submit"]:hover {
+  width: 90%;
+}
+
+}
